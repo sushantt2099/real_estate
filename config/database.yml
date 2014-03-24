@@ -1,0 +1,28 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: estate_development
+  pool: 5
+  username: devloper
+  password:
+  host: 127.0.0.1
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: estate_test
+  pool: 5
+  username: devloper
+  password:
+  host: 127.0.0.1
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: DATABASE_PRODUCTION
+  pool: 5
+  username: devloper
+  password:
