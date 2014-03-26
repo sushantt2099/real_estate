@@ -1,0 +1,28 @@
+<% provide :title, "Mention Facilities" %>
+<h1>Mention Facilities</h1>
+<div class="row">
+	<div class="span3 offset4">
+		<%= form_for(@facility) do |f| %>
+			<%= f.label :parking %>
+			<%= select :facility, :parking, facilitiesConstraint.getParkingTypes.to_a %>
+
+			<%= f.label :gym %>
+			<%= select :facility, :gym, facilitiesConstraint.getBooleanTypes.to_a %>
+
+			<%= f.label "Swimming pool" %>
+			<%= select :facility, :swimming_pool, facilitiesConstraint.getBooleanTypes.to_a %> 
+
+			<%= f.label :Lift %>
+			<%= select :facility, :lift, facilitiesConstraint.getBooleanTypes.to_a %>
+
+			<%= f.label :AC %>
+			<%= f.text_field :ac %>
+
+			<%= f.submit "Add Facilities", class: "btn btn-primary" %>
+
+
+
+		<% end %>
+		
+	</div>
+</div>

@@ -4,27 +4,27 @@ describe Property do
   @@propertyConstraint = PropertyConstraint.new
 
   before do
-  oneBHK = 1;
-	full_furnished = 1;
-	available_from_date = Date.new(2007, 5, 12)
-	rent = 1
-	deposit_amount = 50000
-	bathroom_number = 2
-	build_area = 1200
-	rent_amount = 12000
-	interested_people = 0
-  	@property = Property.new do |p|
-  		p.property_type 	= oneBHK
-  		p.available_from 	= available_from_date
-  		p.furnishing 		= full_furnished
-  		p.lease_type 		= rent
-  		p.build_area 		= build_area
-  		p.rent 				= rent_amount
-  		p.deposit 			= deposit_amount
-  		p.bathroom 			= bathroom_number
-  		p.interested_people_count = interested_people
+    oneBHK = 1;
+    full_furnished = 1;
+    available_from_date = Date.new(2007, 5, 12)
+    rent = 1
+    deposit_amount = 50000
+    bathroom_number = 2
+    build_area = 1200
+    rent_amount = 12000
+    interested_people = 0
+    @property = Property.new do |p|
+    	p.property_type 	= oneBHK
+    	p.available_from 	= available_from_date
+    	p.furnishing 		= full_furnished
+    	p.lease_type 		= rent
+    	p.build_area 		= build_area
+    	p.rent 				= rent_amount
+    	p.deposit 			= deposit_amount
+    	p.bathroom 			= bathroom_number
+    	p.interested_people_count = interested_people
 
-  	end
+    end
   end
 
   subject { @property }

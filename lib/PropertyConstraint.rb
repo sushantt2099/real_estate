@@ -1,6 +1,7 @@
-class PropertyConstraint
-	#universal
-	@@minimum_val = 0
+require 'BasicConstraint'
+
+class PropertyConstraint < BasicConstraint
+	
 
 	#property_type 
 	@@property_types = { pg: 0, rent: 1, lease: 2}
@@ -24,10 +25,6 @@ class PropertyConstraint
 		@@lease_types
 	end
 
-	def getMinimumValue 
-		@@minimum_val
-	end
-
 	def getMaxOfType
 		findMaxValueOfHash(@@property_types)
 	end
@@ -40,13 +37,4 @@ class PropertyConstraint
 		findMaxValueOfHash(@@lease_types)
 	end
 
-	def findMaxValueOfHash(h)
-		highest = 0
-		h.each do |key, value|
-			if highest < value
-				highest = value
-			end
-		end
-		highest
-	end
 end
