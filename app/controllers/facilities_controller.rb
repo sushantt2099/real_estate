@@ -9,22 +9,17 @@ class FacilitiesController < ApplicationController
 		@@facilitiesConstraint
 	end
 
-  	def new
-  		@facility = Facility.new
-  	end
+	def new
+		@facility = Facility.new
+	end
 
-  	def create
-  	@facility = Facility.new(facilityParams)
-  	render 'new'
-  end
+	def create
+		@facility = Facility.new(facility_params)
+		@facility.save
+		render 'new'
+	end
 
-  	def add
-  		@facility = Facility.new(facility_params)
-  		@facility.save
-  		render 'new'
-  	end
-
-  	private
+  private
   	def facility_params
   		params.require(:facility).permit(:gym, :bathroom, :ac, :swimming_pool, :lift, :parking)
   	end

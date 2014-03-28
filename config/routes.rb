@@ -1,9 +1,7 @@
 RealEstate::Application.routes.draw do
 
-  match "/facilities", to: 'facilities#new',  via: 'get'
-  match "/facilities", to: 'facilities#add',  via: 'post'
-  match '/properties', to: 'properties#new',  via: 'get'
-  match '/properties', to: 'properties#add',  via: 'post'
+  resources :facilities, only: [:new, :create] 
+  resources :properties, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

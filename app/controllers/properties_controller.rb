@@ -13,16 +13,15 @@ class PropertiesController < ApplicationController
   	@property = Property.new
   end
 
-  def create
-  	@property = Property.new(property_prams)
-  	render 'new'
-  end
 
-  def add 
+  def create 
   	@property = Property.new(property_prams)
     @property.interested_people_count = 0;
-  	@property.save
-  	render 'new'
+  	if @property.save
+      redirect_to new_facility_path
+    else
+      render new_property_path
+    end
   end
 
 	private
