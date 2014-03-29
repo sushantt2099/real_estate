@@ -47,7 +47,7 @@ describe Facility do
 		end
 
 		describe 'when parking is greater then valid value' do
-			before { @facility.parking = FacilityConstraint.parking_types_max_value + 1}
+			before { @facility.parking = FacilityConstraint.max_value_of_type(FacilityConstraint.parking_types) + 1}
 			it { should_not be_valid }
 		end
 
