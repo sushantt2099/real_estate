@@ -4,7 +4,7 @@ class Property < ActiveRecord::Base
 
 	validates :property_type, 		presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value,
-					 less_than_or_equal_to: PropertyConstraint.property_types_max_value }
+					 less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.property_types) }
 
 	validates :bathroom, 	presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
@@ -17,11 +17,11 @@ class Property < ActiveRecord::Base
 	
 	validates :furnishing,	presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value,
-					less_than_or_equal_to: PropertyConstraint.furnishing_types_max_value }
+					less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.furnishing_types) }
 	
 	validates :lease_type,	presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value,
-					less_than_or_equal_to: PropertyConstraint.lease_types_max_value }
+					less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.lease_types) }
 	
 	validates :build_area,	presence: true, numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
 	validates :available_from, presence: true
