@@ -5,13 +5,13 @@ class PropertyConstraint < BasicConstraint
 	cattr_reader :property_types, :furnishing_types, :lease_types	
 
 	#property_type 
-	@@property_types = { pg: 0, rent: 1, lease: 2}
+	@@property_types = create_types [:pg, :rent, :lease]
 
 	#furnishing
-	@@furnishing_types = { no: 0, semi: 1, full: 2 }
+	@@furnishing_types = create_types [:no, :semi, :full ]
 
 	#lease_type
-	@@lease_types = { rent: 0, lease: 1 }
+	@@lease_types = create_types [:rent,:lease]
 
 
 	class << self 

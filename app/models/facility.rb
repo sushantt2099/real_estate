@@ -1,12 +1,11 @@
-require 'FacilitiesConstraint'
+require 'FacilityConstraint'
 
 class Facility < ActiveRecord::Base
 	belongs_to :property
-	@facilitiesContraint = FacilitiesConstraint.new
 
-	validates :parking, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: @facilitiesContraint.getMinimumValue, 
-														less_than_or_equal_to: @facilitiesContraint.getMaxOfParkingTypes }
+	validates :parking, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: FacilityConstraint.minimum_value, 
+														less_than_or_equal_to: FacilityConstraint.parking_types_max_value }
 
-	validates :ac, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: @facilitiesContraint.getMinimumValue }
+	validates :ac, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: FacilityConstraint.minimum_value }
 
 end

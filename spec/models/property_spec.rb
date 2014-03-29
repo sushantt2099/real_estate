@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Property do
-  @@propertyConstraint = PropertyConstraint.new
 
   before do
     oneBHK = 1;
@@ -87,11 +86,11 @@ describe Property do
 
   describe 'when property_type is not valid' do
     describe 'when property_type is less then min' do
-    	before { @property.property_type = @@propertyConstraint.getMinimumValue - 1 }
+    	before { @property.property_type = PropertyConstraint.minimum_value - 1 }
     	it { should_not be_valid }
     end
     describe 'when property_type is greater then max' do
-      before { @property.property_type = @@propertyConstraint.getMaxOfType + 1 }
+      before { @property.property_type = PropertyConstraint.property_types_max_value + 1 }
       it { should_not be_valid }
     end
   end

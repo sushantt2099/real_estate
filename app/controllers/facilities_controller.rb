@@ -1,13 +1,7 @@
-require 'FacilitiesConstraint'
+require 'FacilityConstraint'
 class FacilitiesController < ApplicationController
 
-	@@facilitiesConstraint = FacilitiesConstraint.new
 
-	helper_method :facilitiesConstraint
-
-	def facilitiesConstraint
-		@@facilitiesConstraint
-	end
 
 	def new
 		@facility = Facility.new
@@ -15,8 +9,11 @@ class FacilitiesController < ApplicationController
 
 	def create
 		@facility = Facility.new(facility_params)
-		@facility.save
-		render 'new'
+		if @facility.save
+
+		else
+			render new_facility_path
+		end
 	end
 
   private

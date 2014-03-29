@@ -5,7 +5,7 @@
 		<%= form_for(@property) do |f| %>
 			<%= render 'shared/error_messages' %>
 			<%= f.label	:type %>
-			<%= select :property, :property_type, propertyConstraint.getPropertyTypes.to_a %>
+			<%= select :property, :property_type, PropertyConstraint.property_types.to_a %>
 
 			<%= f.label	:bathroom %>
 			<%= f.text_field :bathroom %>
@@ -17,10 +17,10 @@
 			<%= f.text_field :deposit %>
 
 			<%= f.label	:furnishing %>
-			<%= select( :property, :furnishing, propertyConstraint.getFurnishingTypes.to_a) %>
+			<%= select( :property, :furnishing, PropertyConstraint.furnishing_types.to_a) %>
 
 			<%= f.label	:lease_type %>
-			<%= select(:property, :lease_type, propertyConstraint.getLeaseTypes.to_a) %>	
+			<%= select(:property, :lease_type, PropertyConstraint.lease_types.to_a) %>	
 
 			<%= f.label	:build_area %>
 			<%= f.text_field :build_area %>

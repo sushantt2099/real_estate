@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Facility do
-	facilitiesContraint = FacilitiesConstraint.new
 
 	before do
 		gym	= true
@@ -43,12 +42,12 @@ describe Facility do
 
 	describe 'when parking is not valid ' do
 		describe 'when parking is less then valid value' do
-			before { @facility.parking = facilitiesContraint.getMinimumValue - 1 }
+			before { @facility.parking = FacilityConstraint.minimum_value - 1 }
 			it { should_not be_valid }
 		end
 
 		describe 'when parking is greater then valid value' do
-			before { @facility.parking = facilitiesContraint.getMaxOfParkingTypes + 1}
+			before { @facility.parking = FacilityConstraint.parking_types_max_value + 1}
 			it { should_not be_valid }
 		end
 

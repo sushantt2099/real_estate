@@ -4,16 +4,16 @@
 	<div class="span3 offset4">
 		<%= form_for(@facility) do |f| %>
 			<%= f.label :parking %>
-			<%= select :facility, :parking, facilitiesConstraint.getParkingTypes.to_a %>
+			<%= select :facility, :parking, FacilityConstraint.parking_types.to_a %>
 
 			<%= f.label :gym %>
-			<%= select :facility, :gym, facilitiesConstraint.getBooleanTypes.to_a %>
+			<%= select :facility, :gym, FacilityConstraint.boolean_types.to_a %>
 
 			<%= f.label "Swimming pool" %>
-			<%= select :facility, :swimming_pool, facilitiesConstraint.getBooleanTypes.to_a %> 
+			<%= select :facility, :swimming_pool, FacilityConstraint.boolean_types.to_a %> 
 
 			<%= f.label :Lift %>
-			<%= select :facility, :lift, facilitiesConstraint.getBooleanTypes.to_a %>
+			<%= select :facility, :lift, FacilityConstraint.boolean_types.to_a %>
 
 			<%= f.label :AC %>
 			<%= f.text_field :ac %>
