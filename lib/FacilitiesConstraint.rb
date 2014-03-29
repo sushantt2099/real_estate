@@ -2,32 +2,17 @@ require 'BasicConstraint'
 
 class FacilitiesConstraint < BasicConstraint
 
+	cattar_reader :parking_types
 	#parking types
-	@@parkingTypes = { no: 0, bike: 1, car: 2, both: 3 }
+	@@parking_types = { no: 0, bike: 1, car: 2, both: 3 }
 
-	def getParkingTypes
-		@@parkingTypes
-	end
 
-	def getBooleanTypes
-		@@booleanTypes
-	end
-	def getMaxOfParkingTypes
-		findMaxValueOfHash(@@parkingTypes)
-	end
+	class << self
 
-	def findMaxValueOfHash(h)
-		highest = 0
-		h.each do |key, value|
-			if highest < value
-				highest = value
-			end
+		def parking_types_max
+			max_value_of_hash(@@parkingTypes)
 		end
-		highest
-	end
 
-	def getMinimumValue 
-		@@minimum_val
 	end
 
 end

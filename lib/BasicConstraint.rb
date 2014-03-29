@@ -1,27 +1,23 @@
 class BasicConstraint
 
+	cattr_reader :minimum_val, :boolean_types
+
 	@@minimum_val = 0
 
 	#boolean hash
-	@@booleanTypes = {  false: :false, true: :true }
+	@@boolean_types = {  false: :false, true: :true }
 
-
-	def getBooleanTypes
-		@@booleanTypes
-	end
-	
-	def getMinimumValue 
-		@@minimum_val
-	end
-
-	def findMaxValueOfHash(h)
-		highest = 0
-		h.each do |key, value|
-			if highest < value
-				highest = value
+	class << self
+		
+		def max_value_of_hash(h)
+			highest = 0
+			h.each do |key, value|
+				if highest < value
+					highest = value
+				end
 			end
+			highest
 		end
-		highest
 	end
 
 	

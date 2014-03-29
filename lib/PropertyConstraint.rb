@@ -1,7 +1,8 @@
 require 'BasicConstraint'
 
 class PropertyConstraint < BasicConstraint
-	
+
+	cattr_reader :property_types, :furnishing_types, :lease_types	
 
 	#property_type 
 	@@property_types = { pg: 0, rent: 1, lease: 2}
@@ -13,28 +14,20 @@ class PropertyConstraint < BasicConstraint
 	@@lease_types = { rent: 0, lease: 1 }
 
 
-	def getPropertyTypes
-		@@property_types
-	end
+	class << self 
 
-	def getFurnishingTypes
-		@@furnishing_types
-	end
 
-	def getLeaseTypes
-		@@lease_types
-	end
+		def property_types_max_value
+			max_value_of_hash(@@property_types)
+		end
 
-	def getMaxOfType
-		findMaxValueOfHash(@@property_types)
-	end
+		def furnishing_types_max_value
+			max_value_of_hash(@@furnishing_types)
+		end
 
-	def getMaxOfFurnishing
-		findMaxValueOfHash(@@furnishing_types)
-	end
-
-	def getMaxOfLeaseType
-		findMaxValueOfHash(@@lease_types)
+		def lease_types_max_value
+			max_value_of_hash(@@lease_types)
+		end
 	end
 
 end
