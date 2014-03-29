@@ -2,7 +2,7 @@ require 'BasicConstraint'
 
 class FacilitiesConstraint < BasicConstraint
 
-	cattar_reader :parking_types
+	cattr_reader :parking_types
 	#parking types
 	@@parking_types = { no: 0, bike: 1, car: 2, both: 3 }
 
