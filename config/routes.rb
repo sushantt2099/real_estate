@@ -1,5 +1,6 @@
 RealEstate::Application.routes.draw do
 
+  resources :property_locations, only: [:new, :create]
   resources :facilities, only: [:new, :create] 
   resources :properties, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.

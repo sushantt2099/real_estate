@@ -20,6 +20,7 @@ class PropertiesController < ApplicationController
   	if @property.save
       redirect_to new_facility_path
     else
+      @database_error = @property
       render new_property_path
     end
   end
