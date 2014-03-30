@@ -9,7 +9,7 @@ class BasicConstraint
 
 	class << self
 		
-		def max_value_of_hash(h)
+		def max_value_of_type(h)
 			highest = 0
 			h.each do |key, value|
 				if highest < value

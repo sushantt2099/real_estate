@@ -90,7 +90,7 @@ describe Property do
     	it { should_not be_valid }
     end
     describe 'when property_type is greater then max' do
-      before { @property.property_type = PropertyConstraint.property_types_max_value + 1 }
+      before { @property.property_type = PropertyConstraint.max_value_of_type(PropertyConstraint.property_types) + 1 }
       it { should_not be_valid }
     end
   end

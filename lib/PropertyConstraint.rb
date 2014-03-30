@@ -13,21 +13,4 @@ class PropertyConstraint < BasicConstraint
 	#lease_type
 	@@lease_types = create_types [:rent,:lease]
 
-
-	class << self 
-
-
-		def property_types_max_value
-			max_value_of_hash(@@property_types)
-		end
-
-		def furnishing_types_max_value
-			max_value_of_hash(@@furnishing_types)
-		end
-
-		def lease_types_max_value
-			max_value_of_hash(@@lease_types)
-		end
-	end
-
 end
