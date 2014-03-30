@@ -2,9 +2,9 @@ require 'PropertyConstraint.rb'
 class Property < ActiveRecord::Base
 	has_one :facility
 
-	validates :property_type, 		presence: true, 
-				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value,
-					 less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.property_types) }
+	validates :property_type, 		presence: true, numericality: { only_integer: true, 
+																	greater_than_or_equal_to: PropertyConstraint.minimum_value,
+								 less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.property_types) }
 
 	validates :bathroom, 	presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
