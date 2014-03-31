@@ -4,16 +4,16 @@
 	<div class="span3 offset4">
 		<%= form_for(@location) do |f| %>
 			<%= render 'shared/error_messages' %>
-			<%= f.label :Area %>
+			<%= f.label PropertyLocationConstraint.LABEL_AREA %>
 			<%= f.text_field :area %>
 
-			<%= f.label "Select City" %>
+			<%= f.label PropertyLocationConstraint.LABEL_CITY %>
 			<%= select :property_location, :city, PropertyLocationConstraint.city_types.to_a %>
 
-			<%= f.label :State %>
+			<%= f.label PropertyLocationConstraint.LABEL_STATE %>
 			<%= select :property_location, :state, PropertyLocationConstraint.state_types.to_a %>
 
-			<%= f.label :Country %>
+			<%= f.label PropertyLocationConstraint.LABEL_COUNTRY %>
 			<%= select :property_location, :country, PropertyLocationConstraint.country_types.to_a %>
 
 			<%= f.submit PropertyLocationConstraint.SUBMIT_BUTTON, class: "btn btn-primary" %>
