@@ -2,7 +2,8 @@ require 'BasicConstraint'
 
 class FacilityConstraint < BasicConstraint
 
-	cattr_reader :parking_types, :LABEL_PARKING, :LABEL_GYM, :LABEL_SWIMMING_POOL, :LABEL_LIFT, :LABEL_AC, :LABEL_SUBMIT_BUTTON
+	cattr_reader :parking_types, :LABEL_PARKING, :LABEL_GYM, :LABEL_SWIMMING_POOL, :LABEL_LIFT,
+				 :LABEL_AC, :LABEL_SUBMIT_BUTTON, :PAGE_TITLE
 	#parking types
 	@@parking_types = create_types [:no, :bike, :car, :both ]
 
@@ -17,5 +18,7 @@ class FacilityConstraint < BasicConstraint
 	@@LABEL_SWIMMING_POOL	= "swimming pool"
 
 	@@LABEL_SUBMIT_BUTTON	= "Add Facilities"
+
+	@@PAGE_TITLE	= "Describe Facilities"
 
 end
