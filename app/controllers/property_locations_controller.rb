@@ -7,7 +7,7 @@ class PropertyLocationsController < ApplicationController
   def create
   	@location = PropertyLocation.new(property_location_params)
   	if @location.save
-  		#render next page
+  		redirect_to new_address_path
   	else
   		@database_error = @location
   		render 'new'

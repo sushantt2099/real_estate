@@ -1,5 +1,6 @@
 RealEstate::Application.routes.draw do
 
+  resources :addresses ,  only: [:new, :create]
   resources :property_locations, only: [:new, :create]
   resources :facilities, only: [:new, :create] 
   resources :properties, only: [:new, :create]
