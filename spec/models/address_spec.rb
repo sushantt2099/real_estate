@@ -10,8 +10,8 @@ describe Address do
 		@address 	= Address.new do |a|
 			a.street_name 	= street_name
 			a.landmark		= landmark
-			a.location_lat	= latitude
-			a.location_long	= longitude
+			a.latitude		= latitude
+			a.longitude		= longitude
 		end
 	end
 
@@ -20,8 +20,8 @@ describe Address do
 	it { should be_valid }
 	it { should respond_to(:street_name) }
 	it { should respond_to(:landmark) }
-	it { should respond_to(:location_lat) }
-	it { should respond_to(:location_long) }
+	it { should respond_to(:latitude) }
+	it { should respond_to(:longitude) }
 
 	describe 'when street_name is not valid' do
 		describe 'when street_name is not present ' do
