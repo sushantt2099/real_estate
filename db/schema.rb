@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402235637) do
+ActiveRecord::Schema.define(version: 20140426132641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140402235637) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "property_id"
   end
 
   create_table "facilities", force: true do |t|
@@ -54,6 +55,12 @@ ActiveRecord::Schema.define(version: 20140402235637) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "interested_people_count"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "facility_id"
+    t.integer  "property_location_id"
   end
 
   create_table "property_locations", force: true do |t|
