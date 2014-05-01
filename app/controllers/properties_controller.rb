@@ -18,6 +18,8 @@ class PropertiesController < ApplicationController
   	@property = Property.new(property_prams)
     @property.interested_people_count = 0;
   	if @property.save
+      #save the current poperty id in the cookie
+      cookies.permanent[PropertyConstraint.cookie_current_property] = @property.id
       redirect_to new_facility_path
     else
       @database_error = @property

@@ -1,8 +1,9 @@
 require 'address_constraint'
+require 'PropertyConstraint'
 class AddressesController < ApplicationController
-  
+  include PropertiesHelper  
   def new
-  	@address = Address.new
+  	@address = current_property.build_address
   end
 
   def create
@@ -18,7 +19,7 @@ class AddressesController < ApplicationController
 
   private 
   	def address_params
-  		params.require(:address).permit(:street_name, :landmark, :latitude, :longitude)
+  		params.require(:address).permit(:street_name, :landmark, :latitude, :longitude, :property_id)
   	end
 
 end
