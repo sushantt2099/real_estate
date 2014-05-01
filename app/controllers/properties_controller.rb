@@ -13,7 +13,10 @@ class PropertiesController < ApplicationController
   	@property = Property.new
   end
 
-
+  def index
+    
+  end
+  
   def create 
   	@property = Property.new(property_prams)
     @property.interested_people_count = 0;

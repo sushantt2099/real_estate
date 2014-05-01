@@ -1,3 +1,70 @@
 // Place all the styles related to the Properties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#property-list {
+	margin-left: 460px;
+	max-width: 720px;
+}
+.property-overview div {
+	display: inline-block;
+}
+.property-overview div:nth-of-type(n+2){
+	margin-left: 10px;
+}
+.property-overview div:last-child{
+	margin-left: 0px;
+}
+.property-overview div div:nth-child(2){
+	margin-left: 0px;
+}
+.property {
+	padding: 10px 0 10px 0;
+	border-top: 2px solid rgba(0, 0, 0, 0.07);
+}
+
+.property-overview {
+	float: left;
+	display: inline-block;
+	margin-left: 300px;
+	margin-top: -150px;
+}
+
+.property-overview div:last-child {
+	display: block;
+}
+
+#property-list div a h2 {
+	margin: 0;
+}
+.property img {
+	max-width: 300px;
+	max-height: 150px;
+}
+
+/*search option */
+
+div .checkbox-inline {
+	display: block;
+}
+#search-cat {
+	float: left;
+	width: 200px;
+	margin-left: 150px;
+}
+#search-cat .checkbox-inline {
+	margin-left: 0px;
+}
+
+#search-cat button {
+	margin-top: 10px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+#search-cat div:first-child h3{
+	margin-top: 0px;
+	padding-top: 0px;
+	font-size: 2em;
+}
+
