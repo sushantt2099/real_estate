@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504013110) do
+ActiveRecord::Schema.define(version: 20140504022722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,35 @@ ActiveRecord::Schema.define(version: 20140504013110) do
     t.string   "landmark"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "property_id"
+  end
+
+  create_table "boolean_amenities", force: true do |t|
+    t.boolean  "dining_table"
+    t.boolean  "fridge"
+    t.boolean  "sofa"
+    t.boolean  "gas_pipe"
+    t.boolean  "stove"
+    t.boolean  "gym"
+    t.boolean  "swimming_pool"
+    t.boolean  "lift"
+    t.boolean  "washing_machine"
+    t.boolean  "microwave"
+    t.boolean  "servent_room"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "integer_amenities", force: true do |t|
+    t.integer  "bathroom"
+    t.integer  "ac"
+    t.integer  "tv"
+    t.integer  "cupboard"
+    t.integer  "bed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "interested_people", force: true do |t|
@@ -35,22 +61,19 @@ ActiveRecord::Schema.define(version: 20140504013110) do
 
   create_table "properties", force: true do |t|
     t.integer  "property_type"
-    t.integer  "bathroom"
     t.integer  "rent"
     t.integer  "deposit"
     t.integer  "furnishing"
     t.integer  "lease_type"
     t.integer  "build_area"
     t.date     "available_from"
+    t.integer  "power_backup"
+    t.integer  "integer_amenity_id"
+    t.integer  "boolean_amenity_id"
+    t.integer  "property_location_id"
+    t.integer  "interested_people_count"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "interested_people_count"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.integer  "facility_id"
-    t.integer  "property_location_id"
   end
 
   create_table "property_locations", force: true do |t|

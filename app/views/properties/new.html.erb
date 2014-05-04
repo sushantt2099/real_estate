@@ -7,9 +7,6 @@
 			<%= f.label	:type %>
 			<%= select :property, :property_type, PropertyConstraint.property_types.to_a %>
 
-			<%= f.label	:bathroom %>
-			<%= f.text_field :bathroom %>
-
 			<%= f.label	:rent %>
 			<%= f.text_field :rent %>
 
@@ -24,6 +21,9 @@
 
 			<%= f.label	:build_area %>
 			<%= f.text_field :build_area %>
+
+			<%= f.label :power_backup %>
+			<%= select :property, :power_backup, PropertyConstraint.powerbackup_types.to_a %>
 
 			<%= f.label	:available_from %>
 			<%= f.date_select :available_from %>

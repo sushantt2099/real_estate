@@ -1,8 +1,11 @@
 RealEstate::Application.routes.draw do
 
+  get "integer_amenities/new"
+  get "integer_amenities/create"
   resources :addresses ,  only: [:new, :create]
   resources :property_locations, only: [:new, :create]
-  resources :facilities, only: [:new, :create] 
+  resources :boolean_amenities, only: [:new, :create] 
+  resources :integer_amenities, only: [:new, :create] 
   resources :properties, only: [:new, :create, :index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

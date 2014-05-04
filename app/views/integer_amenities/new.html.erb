@@ -1,0 +1,26 @@
+<h1>Describe Amenities</h1>
+
+<div class="row">
+	<div class="span3 offset4">
+		<%= form_for(@amenity) do |f|%>
+			<%= f.label IntegerAmenitiesConstraint.LABEL_BATHROOM %>
+			<%= f.text_field :bathroom %>
+
+			<%= f.label IntegerAmenitiesConstraint.LABEL_AC %>
+			<%= f.text_field :ac %>
+
+			<%= f.label IntegerAmenitiesConstraint.LABEL_TV %>
+			<%= f.text_field :tv %>
+
+			<%= f.label IntegerAmenitiesConstraint.LABEL_CUPBOARD %>
+			<%= f.text_field :cupboard %>
+
+			<%= f.label IntegerAmenitiesConstraint.LABEL_BED %>
+			<%= f.text_field :bed %>
+
+			<%= f.submit IntegerAmenitiesConstraint.LABEL_SUBMIT_BUTTON, class: "btn btn-primary" %>
+
+
+		<% end %>
+	</div>
+</div>

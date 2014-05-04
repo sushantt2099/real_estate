@@ -7,9 +7,6 @@ class Property < ActiveRecord::Base
 	validates :property_type, 	presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value,
 								 less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.property_types) }
-
-	validates :bathroom, 	presence: true, 
-				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
 	
 	validates :rent,		presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
@@ -28,4 +25,7 @@ class Property < ActiveRecord::Base
 	validates :build_area,	presence: true, numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
 	validates :available_from, presence: true
 	validates :interested_people_count, numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
+	validates :power_backup, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value, 
+									less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.powerbackup_types)}
+
 end

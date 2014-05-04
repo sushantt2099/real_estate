@@ -23,7 +23,7 @@ class PropertiesController < ApplicationController
   	if @property.save
       #save the current poperty id in the cookie
       cookies.permanent[PropertyConstraint.cookie_current_property] = @property.id
-      redirect_to new_facility_path
+      redirect_to new_boolean_amenity_path
     else
       @database_error = @property
       render new_property_path
@@ -32,6 +32,7 @@ class PropertiesController < ApplicationController
 
 	private
 		def property_prams
-			params.require(:property).permit(:property_type, :bathroom, :rent, :deposit, :furnishing, :lease_type, :build_area, :available_from )
+			params.require(:property).permit(:property_type, :rent, :deposit, :furnishing, :lease_type, 
+                                        :build_area, :available_from, :power_backup)
 		end
 end
