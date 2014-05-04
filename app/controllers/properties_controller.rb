@@ -14,9 +14,9 @@ class PropertiesController < ApplicationController
   end
 
   def index
-    
+    @properties = Property.all
   end
-  
+
   def create 
   	@property = Property.new(property_prams)
     @property.interested_people_count = 0;

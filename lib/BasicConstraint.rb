@@ -28,5 +28,14 @@ class BasicConstraint
 			end
 			typeHash
 		end
+		def get_key_for_value(mapvalue, h)
+			key_found = :could_not_find_value
+			h.each do |key, value|
+				if value == mapvalue
+					key_found = key
+				end
+			end
+			key_found
+		end
 	end
 end

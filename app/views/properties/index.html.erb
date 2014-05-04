@@ -1,1 +1,11 @@
 <%= render 'search_form' %>
+<div id="property-list">
+	<% @properties.each do |property|%>
+		<div class="property">
+			<img src="images/photo1.jpg">
+			<div class="property-overview">
+			<%= link_to PropertyConstraint.get_key_for_value(property.property_type, PropertyConstraint.property_types).to_s, property %>
+
+	<% end %>
+
+</div>
