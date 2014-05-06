@@ -6,8 +6,11 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
-    @boolean_amenity = @property.boolean_amenity
-    @integer_amenity = @property.integer_amenity
+    @boolean_amenity = BooleanAmenity.find_by(id: @property.boolean_amenity_id)
+    @integer_amenity = IntegerAmenity.find_by(id: @property.integer_amenity_id)
+    @location = PropertyLocation.find_by(id: @property.property_location_id)
+    @address = @property.address
+
   end
   
   def new

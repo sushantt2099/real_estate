@@ -1,0 +1,125 @@
+<div class="property">
+		<div class="page-header">
+			<h1><%= PropertyConstraint.get_key_for_value(@property.property_type, PropertyConstraint.property_types) %>
+			<small> near <%= @address.landmark%>,<%= @location.area %></small>
+			</h1>
+		</div>
+		<div class="property-information">
+			<div class="general">
+				<div class="property-feature">
+					<div class="text-muted">Street Info</div>
+					<div><%= @address.street_name%>, Near <%= @address.landmark%>, <%= @location.area %></div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Lease Type</div>
+					<div>Family Only</div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Rent</div>
+					<div><%=@property.rent%></div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Security Deposit</div>
+					<div><%=@property.deposit%></div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Built-Up Area</div>
+					<div><%=@property.build_area%> sq.ft.</div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Power Backup Type</div>
+					<div>
+					<%= PropertyConstraint.get_key_for_value @property.power_backup, PropertyConstraint.powerbackup_types%></div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Security Type</div>
+					<div>Basic</div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Water Supply Type</div>
+					<div>Kaveri Water</div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Added</div>
+					<div>A month ago</div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Facing</div>
+					<div>East</div>
+				</div>
+				<div class="property-feature">
+					<div class="text-muted">Flat ID</div>
+					<div><%= @property.id%></div>
+				</div>
+			</div>
+			<div class="amenities">
+				<div class="property-feature">
+					<div><%=@integer_amenity.bathroom%></div>
+					<div>Bathrooms</div>
+				</div>
+				<div class="property-feature">
+					<div><%=@integer_amenity.ac%></div>
+					<div>AC</div>
+				</div>
+				<div class="property-feature">
+					<div><%=@integer_amenity.tv%></div>
+					<div>TV</div>
+				</div>
+				<div class="property-feature">
+					<div><%=@integer_amenity.cupboard%></div>
+					<div>Cupboards</div>
+				</div>
+				<div class="property-feature">
+					<div><%=@integer_amenity.bed%></div>
+					<div>Bed</div>
+				</div>
+			</div>
+			<div class="other-facility">
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.dining_table%>"></span>
+					<div>Dining Table</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.fridge%>"></span>
+					<div class="text-muted">Fridge</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.sofa%>"></span>
+					<div>Sofa</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.gas_pipe%>"></span>
+					<div class="text-muted">Gas Pipeline</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.stove%>"></span>
+					<div class="text-muted">Stove</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.gym%>"></span>
+					<div>Gym</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.swimming_pool%>"></span>
+					<div class="text-muted">Swimming Pool</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.lift%>"></span>
+					<div class="text-muted">Lift</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.washing_machine%>"></span>      
+					<div>Washing</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.microwave%>"></span>
+					<div class="text-muted">Microwave</div>
+				</div>
+				<div class="property-feature">
+					<span class="<%=glyphicon @boolean_amenity.servent_room%>"></span>
+					<div class="text-muted">Servant Room</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
