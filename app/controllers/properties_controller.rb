@@ -1,12 +1,13 @@
 require 'PropertyConstraint'
 class PropertiesController < ApplicationController
 
-  @@propertyConstraint = PropertyConstraint.new
 
   helper_method :propertyConstraint
 
-  def propertyConstraint
-    @@propertyConstraint
+  def show
+    @property = Property.find(params[:id])
+    @boolean_amenity = @property.boolean_amenity
+    @integer_amenity = @property.integer_amenity
   end
   
   def new

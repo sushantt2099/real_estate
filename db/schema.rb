@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504022722) do
+ActiveRecord::Schema.define(version: 20140505045153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,13 +68,17 @@ ActiveRecord::Schema.define(version: 20140504022722) do
     t.integer  "build_area"
     t.date     "available_from"
     t.integer  "power_backup"
-    t.integer  "integer_amenity_id"
-    t.integer  "boolean_amenity_id"
-    t.integer  "property_location_id"
     t.integer  "interested_people_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "boolean_amenity_id"
+    t.integer  "integer_amenity_id"
+    t.integer  "property_location_id"
   end
+
+  add_index "properties", ["boolean_amenity_id"], name: "index_properties_on_boolean_amenity_id", using: :btree
+  add_index "properties", ["integer_amenity_id"], name: "index_properties_on_integer_amenity_id", using: :btree
+  add_index "properties", ["property_location_id"], name: "index_properties_on_property_location_id", using: :btree
 
   create_table "property_locations", force: true do |t|
     t.string   "area"

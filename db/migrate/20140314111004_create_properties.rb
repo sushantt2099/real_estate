@@ -9,9 +9,6 @@ class CreateProperties < ActiveRecord::Migration
       t.integer :build_area
       t.date :available_from
       t.integer :power_backup
-      t.integer :integer_amenity_id
-      t.integer :boolean_amenity_id
-      t.integer :property_location_id
       t.integer :interested_people_count
 
       t.timestamps

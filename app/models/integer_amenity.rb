@@ -1,6 +1,7 @@
 require 'integer_amenity_constraint'
 class IntegerAmenity < ActiveRecord::Base
-	belongs_to :property
+
+	has_many :property
 
 	validates :bathroom, presence: true, numericality: { only_integer: true, 
 														greater_than_or_equal_to: IntegerAmenitiesConstraint.minimum_value,

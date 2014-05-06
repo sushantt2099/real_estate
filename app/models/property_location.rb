@@ -1,6 +1,7 @@
 require 'property_location_constraint'
 class PropertyLocation < ActiveRecord::Base
 
+	has_many :property
 	validates :area, presence: true, length: { maximum: PropertyLocationConstraint.area_length_max }
 
 	validates :city, presence: true, numericality: { only_interger: true, 
