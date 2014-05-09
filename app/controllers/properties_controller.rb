@@ -37,6 +37,7 @@ class PropertiesController < ApplicationController
 	private
 		def property_prams
 			params.require(:property).permit(:property_type, :rent, :deposit, :furnishing, :lease_type, 
-                                        :build_area, :available_from, :power_backup)
+                                        :build_area, :available_from, :power_backup, :occupant, 
+                                        :facing, :security, :water_supply)
 		end
 end

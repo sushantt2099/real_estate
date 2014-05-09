@@ -23,10 +23,31 @@ class Property < ActiveRecord::Base
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value,
 					less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.lease_types) }
 	
-	validates :build_area,	presence: true, numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
-	validates :available_from, presence: true
-	validates :interested_people_count, numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value }
-	validates :power_backup, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value, 
-									less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.powerbackup_types)}
+	validates :build_area,	presence: true, numericality: { only_integer: true, 
+						greater_than_or_equal_to: PropertyConstraint.minimum_value }
 
+	validates :available_from, presence: true
+
+	validates :interested_people_count, numericality: { only_integer: true, 
+						greater_than_or_equal_to: PropertyConstraint.minimum_value }
+
+	validates :power_backup, presence: true, numericality: { only_integer: true, 
+						greater_than_or_equal_to: PropertyConstraint.minimum_value, 
+						less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.powerbackup_types)}
+
+	validates :occupant, presence: true, numericality: { only_integer: true, 
+						greater_than_or_equal_to: PropertyConstraint.minimum_value,
+						less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.occupant_types)}
+
+	validates :facing, presence: true, numericality: { only_integer: true, 
+						greater_than_or_equal_to: PropertyConstraint.minimum_value,
+						less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.facing_types)}
+
+	validates :security, presence: true, numericality: { only_integer: true, 
+						greater_than_or_equal_to: PropertyConstraint.minimum_value,
+						less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.security_types)}
+
+	validates :water_supply, presence: true, numericality: { only_integer: true, 
+						greater_than_or_equal_to: PropertyConstraint.minimum_value,
+						less_than_or_equal_to: PropertyConstraint.max_value_of_type(PropertyConstraint.water_supply_types)}
 end

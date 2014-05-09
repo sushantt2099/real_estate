@@ -10,4 +10,12 @@ module PropertiesHelper
 			"glyphicon glyphicon-remove text-muted"
 		end
 	end
+
+	def text_muted value
+		if value
+			""
+		else
+			'class=text-muted'
+		end
+	end
 end

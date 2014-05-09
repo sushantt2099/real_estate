@@ -25,6 +25,18 @@
 			<%= f.label :power_backup %>
 			<%= select :property, :power_backup, PropertyConstraint.powerbackup_types.to_a %>
 
+			<%= f.label :Secuity %>
+			<%= select :property, :security, PropertyConstraint.security_types.to_a %>
+
+			<%= f.label :Occupant %>
+			<%= select :property, :occupant, PropertyConstraint.occupant_types %>
+
+			<%= f.label :Facing %>
+			<%= select :property, :facing, PropertyConstraint.facing_types %>
+
+			<%= f.label :water_supply %>
+			<%= select :property, :water_supply, PropertyConstraint.water_supply_types %>
+
 			<%= f.label	:available_from %>
 			<%= f.date_select :available_from %>
 			

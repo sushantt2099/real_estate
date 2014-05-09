@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505045153) do
+ActiveRecord::Schema.define(version: 20140508034014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,10 @@ ActiveRecord::Schema.define(version: 20140505045153) do
     t.integer  "boolean_amenity_id"
     t.integer  "integer_amenity_id"
     t.integer  "property_location_id"
+    t.integer  "occupant"
+    t.integer  "facing"
+    t.integer  "security"
+    t.integer  "water_supply"
   end
 
   add_index "properties", ["boolean_amenity_id"], name: "index_properties_on_boolean_amenity_id", using: :btree
