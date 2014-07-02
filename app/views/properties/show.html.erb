@@ -2,8 +2,29 @@
 <div class="property">
 		<div class="page-header">
 			<h1><%= PropertyConstraint.get_key_for_value(@property.property_type, PropertyConstraint.property_types) %>
-			<small> near <%= @address.landmark%>,<%= @location.area %></small>
+			<small> near <%= @address.landmark%>, <%= @location.area %></small>
 			</h1>
+		</div>
+		<div id="carousel-example-generic" class="carousel slide" data-interval="false">
+	   		<ol class="carousel-indicators">
+		   		<li data-target="#carousel-example-generic" class="active"></li>
+		   		<li data-target="#carousel-example-generic"></li>
+		   		<li data-target="#carousel-example-generic"></li>
+		   	</ol>
+
+		   	<div class="carousel-inner">
+		   		<% @photos.each_with_index do |p, index| %>
+		   		<div class="item <%= if index==0; "active" end %>" >
+		   			<%= image_tag p.photo_url, height: "450px", width: "720px"%>
+		   		</div>
+		   		<% end %>
+			   	<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+			   		<span class="glyphicon glyphicon-chevron-left"></span>
+			   	</a>
+			   	<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+			   		<span class="glyphicon glyphicon-chevron-right"></span>
+			   	</a>
+			</div>
 		</div>
 		<div class="property-information">
 			<div class="general">

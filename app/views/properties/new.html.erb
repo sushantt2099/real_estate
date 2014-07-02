@@ -40,6 +40,13 @@
 
 			<%= f.label	:available_from %>
 			<%= f.date_select :available_from %>
+
+			<%= f.fields_for :photos do |p| %>
+     		<div class="field">
+       			<%= p.label :photo %><br>
+       			<%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
+     		</div>
+   <% end %>
 			
 			<%= f.submit "Add Property", class: "btn btn-primary" %>
 	</div>

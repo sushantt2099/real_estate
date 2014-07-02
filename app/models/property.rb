@@ -4,6 +4,8 @@ class Property < ActiveRecord::Base
 	has_one :property_location
 	has_one :boolean_amenity
 	has_one :integer_amenity
+	has_many :photos
+   	accepts_nested_attributes_for :photos
 
 	validates :property_type, 	presence: true, 
 				numericality: { only_integer: true, greater_than_or_equal_to: PropertyConstraint.minimum_value,

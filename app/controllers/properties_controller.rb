@@ -10,11 +10,12 @@ class PropertiesController < ApplicationController
     @integer_amenity = IntegerAmenity.find_by(id: @property.integer_amenity_id)
     @location = PropertyLocation.find_by(id: @property.property_location_id)
     @address = @property.address
-
+    @photos  = @property.photos.all
   end
   
   def new
   	@property = Property.new
+    @photo = @property.photos.build
   end
 
   def index
@@ -26,6 +27,9 @@ class PropertiesController < ApplicationController
     @property.interested_people_count = 0;
   	if @property.save
       #save the current poperty id in the cookie
+      params[:photos]['photo'].each do |p|
+          @photo = @property.photos.create!(:photo => p, :property_id => @property.id)
+       end
       cookies.permanent[PropertyConstraint.cookie_current_property] = @property.id
       redirect_to new_boolean_amenity_path
     else
