@@ -7,6 +7,7 @@ RealEstate::Application.routes.draw do
   resources :boolean_amenities, only: [:new, :create] 
   resources :integer_amenities, only: [:new, :create] 
   resources :properties, only: [:new, :create, :index, :show]
+  resources :sessions, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

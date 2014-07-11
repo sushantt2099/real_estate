@@ -1,0 +1,19 @@
+<%= form_for(:session, url: sessions_path, html: { id: "login-form", class: "form-inline" }) do |f| %>
+	<div class="form-group">
+		<%= f.text_field UserConstraint.LABEL_USER_EMAIL, placeholder: "Email", class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.password_field UserConstraint.LABEL_USER_PASSWORD, placeholder: "Password", class: "form-control" %>
+	</div>
+	<%= f.submit SessionConstraint.LABEL_SIGN_IN_BUTTON, class: "btn btn-primary" %>
+	<div id="login-options">
+  					<div class="checkbox">
+    					<label>
+    						<input type="checkbox"> Keep me logged in
+    					</label>
+  					</div>
+  					<div>
+  						<p>Forgot your password?</p>
+  					</div>
+  				</div>
+<% end %>

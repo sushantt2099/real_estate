@@ -1,0 +1,28 @@
+require 'constraint/basic_constraint'
+
+class UserConstraint < BasicConstraint
+	cattr_reader :MAX_USER_NAME_LENGTH, :MAX_EMAIL_LENGTH, :MIN_PASSWORD_LENGTH, :LABEL_SUBMIT_BUTTON, :LABEL_USER_NAME,
+					:LABEL_USER_EMAIL, :LABEL_USER_PASSWORD, :LABEL_USER_PASSWORD_CONFIRMATION, :USER_REMEMBER_TOKEN, :LABEL_NEW_USER_PAGE_TITLE
+
+	@@MAX_USER_NAME_LENGTH 	= 30;
+
+	@@MAX_EMAIL_LENGTH		= 30;
+
+	@@MIN_PASSWORD_LENGTH	= 6;
+
+	@@LABEL_SUBMIT_BUTTON	= :"Create my Account"
+
+	@@LABEL_USER_NAME		= :name
+
+	@@LABEL_USER_EMAIL		= :email
+
+	@@LABEL_USER_PASSWORD	= :password
+
+	@@LABEL_USER_PASSWORD_CONFIRMATION	= :password_confirmation
+
+	@@LABEL_NEW_USER_PAGE_TITLE = :"Create New Accout"
+
+	@@USER_REMEMBER_TOKEN = :remember_token
+
+
+end
