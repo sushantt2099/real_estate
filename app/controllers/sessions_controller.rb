@@ -28,18 +28,20 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-		sign_out current_user
-		redirect_to root_url
+		begin	
+			sign_out current_user
+			redirect_to root_url
+		rescue
+			redirect_to root_url
+		end
 	end
 
 	private
 
 		def save_cookie_and_redirect_to_current_user authentication_token
 			cookies.permanent[SessionConstraint.USER_AUTHENTICATION_TOKEN] = authentication_token
-			redirect_to new_property_path
+			redirect_to '/dashboards/show'
 			
 		end
 
-end
-class SessionsController < ApplicationController
 end

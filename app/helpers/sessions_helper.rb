@@ -1,3 +1,5 @@
+require 'constraint/session_constraint'
+require 'constraint/user_constraint'
 module SessionsHelper
 	def signin_user(user)
 		random_token = User.new_remember_token

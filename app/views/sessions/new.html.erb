@@ -1,5 +1,4 @@
-<%= render 'header' %>
-
+<% provide(:dashboard, true) %>
 <div id="content">
 	<h1><%= SessionConstraint.PAGE_TITLE%></h1>
 	<%= render 'new_session_form' %>
