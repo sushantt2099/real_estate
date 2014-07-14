@@ -1,0 +1,14 @@
+<% if signed_in? %>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Rema Real Estate</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+		    <li class="dropdown">
+		     <%= link_to "Sign out", signout_path, method: 'delete' %>
+		    </li>
+		  </ul>
+		</div>
+	</nav>
+<% end %>
