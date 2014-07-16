@@ -1,0 +1,50 @@
+body {
+	background-color: #F5F5F5;
+}
+.home-page-main-img {
+	resize: both;
+	width: 100%;
+	height: 40%;
+	margin-bottom: 10px;
+
+}
+.heading {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+}
+.search-btn {
+	position: fixed;
+	top: 250px;
+	margin-left: 43%;
+	z-index: 1;
+}
+
+.search-form div input {
+	height: 40px;
+	background-color: #E6E6E6; 
+}
+.call p{
+	text-align: center;
+}
+.call p:nth-child(1) {
+	font-size: 18px;
+	font-family: "proxima-nova", "Calibri", "Cantarell", sans-serif;
+	margin-bottom: 0px;
+}
+.call p:nth-child(2) {
+	font-size: 36px;
+	font-family: "proxima-nova", "Calibri", "Cantarell", sans-serif;
+	font-weight: bold;
+	margin-top: -10px;
+}
+.area {
+	text-align: center;
+	font-size: 20px;
+}
+.description {
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-top: 50px;
+}

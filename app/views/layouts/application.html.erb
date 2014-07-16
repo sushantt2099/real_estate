@@ -11,7 +11,11 @@
 
   <% elsif content_for? :property_view %>
 
-  	<%= stylesheet_link_tag "application-property-view" %>
+  	<%= stylesheet_link_tag "application-property-view", media: "all", "data-turbolinks-track" => true %>
+
+  <% elsif content_for? :static_page %>
+
+    <%= stylesheet_link_tag "static-pages", media: "all", "data-turbolinks-track" => true %>
 
   <% end %>
 

@@ -7,7 +7,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-  	@address = current_property.build_address(address_params)
+  	@address = current_property.addresses.build(address_params)
   	if @address.save
   		redirect_to new_property_path
   	else

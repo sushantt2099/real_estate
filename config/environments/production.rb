@@ -26,7 +26,7 @@ RealEstate::Application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  config.assets.precompile += %w( application-all.css application-dashboard.css application-property-view.css )
+  config.assets.precompile += %w( application-all.css application-dashboard.css application-property-view.css static_pages.css )
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
