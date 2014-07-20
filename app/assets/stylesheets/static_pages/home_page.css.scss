@@ -1,11 +1,11 @@
 body {
-	background-color: #F5F5F5;
 }
 .home-page-main-img {
 	resize: both;
 	width: 100%;
 	height: 40%;
 	margin-bottom: 10px;
+	position: relative;
 
 }
 .heading {
@@ -14,10 +14,9 @@ body {
 	width: 100%;
 }
 .search-btn {
-	position: fixed;
-	top: 250px;
+	margin-top: -750px;
 	margin-left: 43%;
-	z-index: 1;
+	position: relative;
 }
 
 .search-form div input {
