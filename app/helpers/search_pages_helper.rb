@@ -1,0 +1,3 @@
+
+module SearchPagesHelper
+end

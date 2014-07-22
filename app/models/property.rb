@@ -5,6 +5,7 @@ class Property < ActiveRecord::Base
 	has_one :boolean_amenity
 	has_one :integer_amenity
 	has_many :photos
+	has_many :interested_people
    	accepts_nested_attributes_for :photos
 
 	validates :property_type, 	presence: true, 

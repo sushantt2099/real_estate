@@ -1,0 +1,14 @@
+<%= form_for @interested_people do |f| %>
+	<div class="row">
+ 		<div class="col-lg-12">
+    		<div class="input-group">
+				<%= hidden_field :property, :id %>
+				<%= f.text_field :phone_number, class: "form-control", placeholder: "Your Contact number" %>
+				<span class="input-group-btn">
+					<%= f.submit "Show Interest in this property!", class: "btn btn-default" %>
+				</span>
+			</div><!-- /input-group -->
+  		</div><!-- /.col-lg-6 -->
+	</div>
+<% end %>
+      

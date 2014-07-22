@@ -35,5 +35,5 @@ RealEstate::Application.configure do
   config.active_support.deprecation = :stderr
 
   
-  config.assets.precompile += %w( application-all.css application-dashboard.css application-property-view.css static_pages.css )
+  config.assets.precompile += %w( application-all.css application-dashboard.css application-property-view.css static_pages.css search_pages.css)
 end

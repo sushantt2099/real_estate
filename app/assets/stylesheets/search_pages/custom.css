@@ -1,0 +1,96 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a h2 {
+	margin: 0;
+}
+
+.content {
+	margin-top: 50px;
+}
+
+#property-list {
+	margin-left: 40px;
+	overflow: auto;
+}
+.property-overview ul{
+	list-style-type: none;
+	padding: 0;
+	float: left;
+}
+.property-overview div {
+	float: left;
+}
+.property {
+	max-width: 400px;
+	display: inline-block;
+	float: left;
+	padding: 10px 0 10px 0;
+	border-top: 2px solid rgba(0, 0, 0, 0.07);
+	margin-left: 50px;
+	margin-bottom: 10px;
+	height: 230px;
+	
+}
+
+.property-overview {
+	overflow: auto;
+}
+
+#property-list div a{
+	font-size: 2em;
+	float: left;
+}
+.property img {
+	width: 60%;
+	clear: left;
+	float: right;
+
+}
+
+@media (max-width: 600) {
+	#property-list {
+		clear: left;
+		margin-left: 0px;
+	}
+	body #search-cat {
+		margin-left: 40px;
+	}
+
+}
+@media (max-width: 800){
+	body #search-cat {
+		margin-left: 40px;
+	}
+}
+
+/*search option */
+
+div .checkbox-inline {
+	display: block;
+}
+#search-cat {
+	float: left;
+	width: 200px;
+	margin-left: 150px;
+}
+#search-cat .checkbox-inline {
+	margin-left: 0px;
+}
+
+#search-cat button {
+	margin-top: 10px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+#search-cat div:first-child h3{
+	margin-top: 0px;
+	padding-top: 0px;
+	font-size: 2em;
+}
+

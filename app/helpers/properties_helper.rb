@@ -1,3 +1,4 @@
+include CarrierWave::MiniMagick
 module PropertiesHelper
 	def current_property
 		Property.find_by(id: cookies[PropertyConstraint.cookie_current_property])
@@ -18,4 +19,5 @@ module PropertiesHelper
 			'class=text-muted'
 		end
 	end
+
 end

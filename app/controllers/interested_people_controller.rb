@@ -1,0 +1,29 @@
+class InterestedPeopleController < ApplicationController
+ 
+
+  def create
+  	@current_property = Property.find_by(param_current_property_id)
+  	if @current_property
+  		@interested_person = @current_property.interested_people.build(param_interested_person)
+  		if @interested_person.save
+  			flash[:success] = "Your contact number #{@interested_person.phone_number} is noted, our team will contact you soon."
+  		end
+  		redirect_to @current_property
+
+  	else
+  		redirect_to root
+  	end
+  		
+
+  end
+
+  private
+	def param_current_property_id
+		params.require(:property).permit(:id)
+	end  
+
+	def param_interested_person
+		params.require(:interested_person).permit(:phone_number)
+	end	
+
+end
