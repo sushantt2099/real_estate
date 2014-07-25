@@ -3,22 +3,34 @@
 <div class="row">
 	<div class="span3 offset4">
 		<%= form_for(@amenity) do |f|%>
-			<%= f.label IntegerAmenitiesConstraint.LABEL_BATHROOM %>
-			<%= f.text_field :bathroom %>
+			<div class="form-group">
+				<%= f.label IntegerAmenitiesConstraint.LABEL_BATHROOM %>
+				<%= f.text_field :bathroom, class: "form-control" %>
+			</div>
 
-			<%= f.label IntegerAmenitiesConstraint.LABEL_AC %>
-			<%= f.text_field :ac %>
+			<div class="form-group">
+				<%= f.label IntegerAmenitiesConstraint.LABEL_AC %>
+				<%= f.text_field :ac, class: "form-control" %>
+			</div>
 
-			<%= f.label IntegerAmenitiesConstraint.LABEL_TV %>
-			<%= f.text_field :tv %>
+			<div class="form-group">
+				<%= f.label IntegerAmenitiesConstraint.LABEL_TV %>
+				<%= f.text_field :tv, class: "form-control" %>
+			</div>
 
-			<%= f.label IntegerAmenitiesConstraint.LABEL_CUPBOARD %>
-			<%= f.text_field :cupboard %>
+			<div class="form-group">
+				<%= f.label IntegerAmenitiesConstraint.LABEL_CUPBOARD %>
+				<%= f.text_field :cupboard, class: "form-control" %>
+			</div>
 
-			<%= f.label IntegerAmenitiesConstraint.LABEL_BED %>
-			<%= f.text_field :bed %>
+			<div class="form-group">
+				<%= f.label IntegerAmenitiesConstraint.LABEL_BED %>
+				<%= f.text_field :bed, class: "form-control" %>
+			</div>
 
-			<%= f.submit IntegerAmenitiesConstraint.LABEL_SUBMIT_BUTTON, class: "btn btn-primary" %>
+			<div class="form-group">
+				<%= f.submit IntegerAmenitiesConstraint.LABEL_SUBMIT_BUTTON, class: "btn btn-primary" %>
+			</div>
 
 
 		<% end %>

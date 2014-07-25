@@ -5,19 +5,33 @@
 	<div class="span3 offset4">
 		<%= form_for(@location) do |f| %>
 			<%= render 'shared/error_messages' %>
-			<%= f.label PropertyLocationConstraint.LABEL_AREA %>
-			<%= f.text_field :area %>
+			<div class="form-group">
+				<%= f.label PropertyLocationConstraint.LABEL_AREA %>
+				<%= f.text_field :area, class: "form-control" %>
+			</div>
 
-			<%= f.label PropertyLocationConstraint.LABEL_CITY %>
-			<%= select :property_location, :city, PropertyLocationConstraint.city_types.to_a %>
+			<div class="form-group">
+				<%= f.label PropertyLocationConstraint.LABEL_CITY %>
+				<%= select :property_location, :city, 
+							PropertyLocationConstraint.city_types.to_a, { }, {class: "form-control"} %>
+			</div>
 
-			<%= f.label PropertyLocationConstraint.LABEL_STATE %>
-			<%= select :property_location, :state, PropertyLocationConstraint.state_types.to_a %>
+			<div class="form-group">
+				<%= f.label PropertyLocationConstraint.LABEL_STATE %>
+				<%= select :property_location, :state, 
+							PropertyLocationConstraint.state_types.to_a, { }, {class: "form-control"} %>
+			</div>
 
-			<%= f.label PropertyLocationConstraint.LABEL_COUNTRY %>
-			<%= select :property_location, :country, PropertyLocationConstraint.country_types.to_a %>
+			<div class="form-group">
+				<%= f.label PropertyLocationConstraint.LABEL_COUNTRY %>
+				<%= select :property_location, :country, 
+							PropertyLocationConstraint.country_types.to_a, { }, {class: "form-control"} %>
+			</div>
 
-			<%= f.submit PropertyLocationConstraint.SUBMIT_BUTTON, class: "btn btn-primary" %>
+			<div class="form-group">
+				<%= f.submit PropertyLocationConstraint.SUBMIT_BUTTON, class: "btn btn-primary" %>
+			</div>
+
 			<% end %>
 	</div>
 </div>

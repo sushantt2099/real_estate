@@ -2,41 +2,76 @@
 <% provide(:dashboard, true) %>
 <div class="row">
 	<div class="span3 offset4">
-		<%= form_for(@amenity) do |f|%>
-			<%= f.label BooleanAmenitiesConstraint.LABEL_DINING_TABLE %>
-			<%= select :boolean_amenities, :dining_table, BooleanAmenitiesConstraint.boolean_types.to_a %>
+		<%= form_for @amenity, html: { role: "form" } do |f|%>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_DINING_TABLE %>
+				<%= select :boolean_amenities, :dining_table,
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_FRIDGE %>
-			<%= select :boolean_amenities, :fridge, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_FRIDGE %>
+				<%= select :boolean_amenities, :fridge,
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_SOFA %>
-			<%= select :boolean_amenities, :sofa, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_SOFA %>
+				<%= select :boolean_amenities, :sofa, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_GAS_PIPE %>
-			<%= select :boolean_amenities, :gas_pipe, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_GAS_PIPE %>
+				<%= select :boolean_amenities, :gas_pipe, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_STOVE %>
-			<%= select :boolean_amenities, :stove, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_STOVE %>
+				<%= select :boolean_amenities, :stove, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_GYM %>
-			<%= select :boolean_amenities, :gym, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_GYM %>
+				<%= select :boolean_amenities, :gym, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_SWIMMING_POOL %>
-			<%= select :boolean_amenities, :swimming_pool, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_SWIMMING_POOL %>
+				<%= select :boolean_amenities, :swimming_pool, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_LIFT %>
-			<%= select :boolean_amenities, :lift, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_LIFT %>
+				<%= select :boolean_amenities, :lift, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_WASHING_MACHINE %>
-			<%= select :boolean_amenities, :washing_machine, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_WASHING_MACHINE %>
+				<%= select :boolean_amenities, :washing_machine, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_MICROWAVE %>
-			<%= select :boolean_amenities, :microwave, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_MICROWAVE %>
+				<%= select :boolean_amenities, :microwave, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.label BooleanAmenitiesConstraint.LABEL_SERVENT_ROOM %>
-			<%= select :boolean_amenities, :servent_room, BooleanAmenitiesConstraint.boolean_types.to_a %>
+			<div class="form-group">
+				<%= f.label BooleanAmenitiesConstraint.LABEL_SERVENT_ROOM %>
+				<%= select :boolean_amenities, :servent_room, 
+						BooleanAmenitiesConstraint.boolean_types.to_a, { }, { :class => 'form-control'} %>
+			</div>
 
-			<%= f.submit BooleanAmenitiesConstraint.LABEL_SUBMIT_BUTTON, class: "btn btn-primary" %>
+			<div class="form-group">
+				<%= f.submit BooleanAmenitiesConstraint.LABEL_SUBMIT_BUTTON, class: "btn btn-primary" %>
+			</div>
 		<% end %>
 		
 	</div>
