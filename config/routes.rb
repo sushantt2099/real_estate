@@ -8,7 +8,7 @@ RealEstate::Application.routes.draw do
   resources :boolean_amenities,   only: [:new, :create] 
   resources :integer_amenities,   only: [:new, :create] 
   resources :properties,          only: [:new, :create, :index, :show]
-  resources :sessions,            only: [:new, :create, :destroy]
+  resources :sessions,            only: [:new, :create]
   resources :dashboards,          only: [:show]
   resources :search_pages,        only: [:show]
   resources :interested_people,    only: [:create]
