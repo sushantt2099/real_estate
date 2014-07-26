@@ -1,8 +1,9 @@
 <% provide(:property_view, true) %>
-<%= render '/static_pages/navigation_bar' %>
+<%= render 'layouts/flash_messages' %>
 <div class="property">
 		<%= render 'property_header' %>
 		<%= render 'load_images' %>
+		<%= render 'interest_number' %>
 		<%= render 'property_properties' %>
 		<%= render 'show_interest_form' %>
 </div>

@@ -4,8 +4,13 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Rema Real Estate</a>
 			</div>
+			<form id="create-property-btn" class="form-inline" role="form">
+				<%= link_to new_property_path do %>
+					<button type="button" class="btn btn-primary">Add a new Property</button>
+				<% end %>
+			</form>
 			<ul class="nav navbar-nav navbar-right">
-		    <li class="dropdown">
+		    <li>
 		     <%= link_to "Sign out", signout_path, method: 'delete' %>
 		    </li>
 		  </ul>

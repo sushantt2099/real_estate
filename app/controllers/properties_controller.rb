@@ -11,7 +11,8 @@ class PropertiesController < ApplicationController
     @location = PropertyLocation.find_by(id: @property.property_location_id)
     @address = @property.address
     @photos  = @property.photos.all
-    @interested_people = @property.interested_people.build
+    @interested_people = @property.interested_people
+    @new_interested_person = @property.interested_people.build
   end
   
   def new

@@ -2,10 +2,8 @@
 	<div class="property">
 		<div class="property-overview">
 			<%= link_to p do %>
-				<h2>
-					<%= BasicConstraint.get_key_for_value(p.property_type, PropertyConstraint.property_types) %>
-					<small>near <%= p.address.landmark %>, <%= p.address.street_name%></small>
-				</h2>
+				<% @property = p %>
+				<%= render 'properties/property_header' %>
 			<% end %>
 			<%= image_tag p.photos.first.photo_url(:resize_to_limit => [150, 200]) %>
 			<ul>
@@ -13,7 +11,7 @@
 				<li><%= BasicConstraint.get_key_for_value(p.furnishing, PropertyConstraint.furnishing_types) %> Furnishing</li>
 				<li>Veg only</li>
 			</ul>
-			<div class="text-muted">Added <%= time_ago_in_words p.created_at %> ago</div>
+			<div class="text-muted">Added <%= time_ago_in_words p.updated_at %> ago</div>
 		</div>	
 	</div>
 <% end %>

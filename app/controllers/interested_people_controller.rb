@@ -1,14 +1,20 @@
+require 'interested_people_constraint'
+
 class InterestedPeopleController < ApplicationController
  
 
   def create
   	@current_property = Property.find_by(param_current_property_id)
   	if @current_property
-  		@interested_person = @current_property.interested_people.build(param_interested_person)
+      param = param_interested_person
+      param["status"] = InterestedPeopleConstraint.status_types[:active]
+      puts param
+  		@interested_person = @current_property.interested_people.build(param)
   		if @interested_person.save
   			flash[:success] = "Your contact number #{@interested_person.phone_number} is noted, our team will contact you soon."
+        redirect_to @current_property
   		end
-  		redirect_to @current_property
+  		
 
   	else
   		redirect_to root

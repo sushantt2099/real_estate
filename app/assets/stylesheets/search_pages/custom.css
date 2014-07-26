@@ -16,6 +16,14 @@ a h2 {
 	margin-left: 40px;
 	overflow: auto;
 }
+.page-header {
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+}
+h1 {
+	font-size: 25px;
+}
 .property-overview ul{
 	list-style-type: none;
 	padding: 0;

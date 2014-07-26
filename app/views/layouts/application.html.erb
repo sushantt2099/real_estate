@@ -30,11 +30,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'dashboards/header' %>
 	<div class="content">
-		<%= render 'layouts/flash_messages' %>
 		<%= yield %>
-		<%= debug params  %>
 	</div>
 
 </body>
