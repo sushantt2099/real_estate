@@ -9,7 +9,7 @@ class AddressesController < ApplicationController
   def create
   	@address = current_property.build_address(address_params)
   	if @address.save
-  		redirect_to new_property_path
+  		redirect_to current_property
   	else
   		@database_error = @address
   		render new_address_path
