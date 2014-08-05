@@ -14,13 +14,15 @@ class InterestedPeopleController < ApplicationController
   			flash[:success] = "Your contact number #{@interested_person.phone_number} is noted, our team will contact you soon."
         redirect_to @current_property
   		end
-  		
-
   	else
   		redirect_to root
   	end
-  		
+  end
 
+  def destroy
+    notification = InterestedPerson.find_by(id: params[:id])
+    notification.delete
+    redirect_to '/dashboards/show'
   end
 
   private

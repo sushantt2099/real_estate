@@ -1,30 +1,26 @@
 <div id="notifications">
-			<div id="active-notifications">
-				<ul>
-				<% notifications = InterestedPerson.all %>
-				<% notifications.each do |notification| %>
-					<li>
-						<div class="checkbox">
-	  						<label>
-	    						<input type="checkbox" value="">
-	    							<%= notification.phone_number %> is interested in <a href="#">1BHK near asdfasdf</a>
-	  						</label>
-						</div>
-					</li>
-				<% end %>
-				</ul>
-				<a  id="update-active-notification-btn" href="#">
-					<button type="button" class="btn btn-primary">Mark it as old</button>
-				</a>
-			</div>
-
-
-			<div id="inactive-notifications">
-				<ul>
-
-				</ul>
-				<a  id="update-inactive-notification-btn" href="#">
-					<button type="button" class="btn btn-default">Mark it as old</button>
-				</a>
-			</div>
-
+	<div id="active-notifications">
+		<ul>
+		<% isAnyNotificationActive = false %>
+		<% notifications = InterestedPerson.all %>
+		<% notifications.each do |notification| %>
+		<% @property = Property.find_by(id: notification.property_id) %>
+			<% if notification.status == InterestedPeopleConstraint.status_types[:active] %>
+			<% isAnyNotificationActive = true %>
+			<li>
+				<div class="checkbox">
+						<label>
+						<input type="checkbox" value="">
+    						<%="#{notification.phone_number} is interested in "%>
+    						<%= link_to @property do %>
+    							<%= render 'properties/property_header' %>
+    						<% end %>
+    						<%= link_to "delete", interested_person_path(notification), method: "delete" %>
+    				</label>
+				</div>
+			</li>
+			<% end %>		
+		<% end %>
+		</ul>
+	</div>
+</div>

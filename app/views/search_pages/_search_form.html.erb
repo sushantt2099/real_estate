@@ -1,95 +1,83 @@
-<form id="search-cat">
 
-		<div>
-			<h4>Price Range</h4>
-			<select class="form-control">
-			  <option>min-5000</option>
-			  <option>5000-10000</option>
-			  <option>10000-15000</option>
-			  <option>15000-20000</option>
-			  <option>20000-25000</option>
-			  <option>25000-30000</option>
-			  <option>30000+</option>
-			</select>
-		</div>
-		<div>
-			<h4>Bedrooms</h4>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox1" value="option1"> All
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox2" value="option2"> 1 R
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox3" value="option3"> 1 RK
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox4" value="option4"> 1 BHK
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox5" value="option5"> 2 BHK
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox6" value="option6"> 3 BHK
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox7" value="option7"> 4 BHK
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox8" value="option8"> 5 BHK
-			</label>
-		</div><div>
-			<h4>Type</h4>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox1" value="option1"> All
-			</label>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox1" value="option1"> Rent
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox2" value="option2"> Lease
-			</label>
-		</div>
-		<div>
-			<h4>Localities</h4>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox1" value="option1"> AECS Layout
-			</label>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox2" value="option2"> Whitefield
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox2" value="option2"> Brookfield
-			</label>
-		</div>
-		<div>
-			<h4>Property Type</h4>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox1" value="option1"> Appartment/flat
-			</label>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox2" value="option2"> Individual House
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox2" value="option2"> Villas
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox2" value="option2"> Service Appartment
-			</label>
-		</div>
-		<div>
-			<h4>Property Type</h4>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox1" value="option1"> Full Furnished
-			</label>
-			<label class="checkbox-inline">
-			<input type="checkbox" id="inlineCheckbox2" value="option2"> Semi Furnished
-			</label>
-			<label class="checkbox-inline">
-			  <input type="checkbox" id="inlineCheckbox2" value="option2"> Unfurnished
-			</label>
-		</div>
-		<div>
-			<button type="button" class="btn btn-default">Search</button>
-		</div>
-	</form>
+<%= form_tag({controller: "search_pages", action: "search"}, method: "get", id: "search-cat")  do %>
+
+	<div>
+		<%= label_tag :price_range %>
+		<%= select_tag :price_range, 
+						options_for_select([['All', 0],
+											['<5000', 1], 
+											['5000-10000',	2],
+											['10000-15000',	3],
+											['15000-2000',	4],
+											['20000-25000',	5],
+											['25000-30000',	6],
+											['30000+',		7]]),
+						{ class: "form-control"}  %>
+
+
+	</div>
+
+	<div>
+		<h4>Bedrooms</h4>		
+			<%= label_tag :bedroom_all, nil, class: "checkbox-inline" do %>
+				<%= check_box_tag(:bedroom_all) %>All
+			<% end %>
+		
+		
+			<%= label_tag :bedroom_1R, nil, class: "checkbox-inline" do %>
+				<%= check_box_tag(:bedroom_1R) %>1R
+			<% end %>
+		
+
+		
+			<%= label_tag(:bedroom_1RK, nil, class: "checkbox-inline") do %>
+				<%= check_box_tag(:bedroom_1RK) %>1RK
+			<% end %>
+
+		
+			<%= label_tag(:bedroom_1BHK, nil, class: "checkbox-inline") do %>
+				<%= check_box_tag(:bedroom_1BHK) %>1BHK
+			<% end %>
+			
+			<%= label_tag(:bedroom_2BHK, nil, class: "checkbox-inline") do %>
+				<%= check_box_tag(:bedroom_2BHK) %>2BHK
+			<% end %>
+			
+			<%= label_tag(:bedroom_3BHK, nil, class: "checkbox-inline") do %>
+				<%= check_box_tag(:bedroom_3BHK) %>3BHK
+			<% end %>
+			
+			<%= label_tag(:bedroom_4BHK, nil, class: "checkbox-inline") do %>
+				<%= check_box_tag(:bedroom_4BHK) %>4BHK
+			<% end %>
+			
+			<%= label_tag(:bedroom_5BHK, nil, class: "checkbox-inline") do %>
+				<%= check_box_tag(:bedroom_5BHK) %>5BHK+
+			<% end %>
+		
+	</div>
+	<div>
+		<h4>Type</h4>
+		<%= label_tag :type_all, nil, class: "checkbox-inline" do %>
+			<%= check_box_tag(:type_all) %>All
+		<% end %>
+		<%= label_tag :type_rent, nil, class: "checkbox-inline" do %>
+			<%= check_box_tag(:type_rent) %>All
+		<% end %>
+		<%= label_tag :type_lease, nil, class: "checkbox-inline" do %>
+			<%= check_box_tag(:type_lease) %>All
+		<% end %>
+		<%= label_tag :type_sale, nil, class: "checkbox-inline" do %>
+			<%= check_box_tag(:type_sale) %>All
+		<% end %>
+	</div>
+	<div>
+		<h4>Localities</h4>
+		
+	</div>
+
+
+
+	<%= submit_tag("Search")%>
+
+<% end %>

@@ -2,7 +2,7 @@ class SearchPagesController < ApplicationController
 
 	include PropertiesHelper
  
-	def show
+	def search
 		@properties = Property.all
 	end
   
