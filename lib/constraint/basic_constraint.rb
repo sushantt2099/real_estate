@@ -39,5 +39,16 @@ class BasicConstraint
 			end
 			key_found
 		end
+
+		def get_value(typeHash)
+			values = []
+			index = 0
+			typeHash.each do |key, value| 
+				values[index] = value
+				index = index + 1
+			end
+			values
+			
+		end
 	end
 end

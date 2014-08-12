@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805023305) do
+ActiveRecord::Schema.define(version: 20140810061548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140805023305) do
     t.integer  "property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "land_property_id"
   end
 
   create_table "boolean_amenities", force: true do |t|
@@ -38,18 +39,6 @@ ActiveRecord::Schema.define(version: 20140805023305) do
     t.boolean  "washing_machine"
     t.boolean  "microwave"
     t.boolean  "servent_room"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "create_land_properties", force: true do |t|
-    t.integer  "lease_type"
-    t.integer  "interested_people_count"
-    t.date     "available_from"
-    t.text     "description"
-    t.integer  "water_supply"
-    t.integer  "area"
-    t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -73,11 +62,25 @@ ActiveRecord::Schema.define(version: 20140805023305) do
     t.integer  "status"
   end
 
+  create_table "land_properties", force: true do |t|
+    t.integer  "lease_type"
+    t.integer  "interested_people_count"
+    t.date     "available_from"
+    t.text     "description"
+    t.integer  "water_supply"
+    t.integer  "area"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "property_location_id"
+  end
+
   create_table "photos", force: true do |t|
     t.string   "photo"
     t.integer  "property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "land_property_id"
   end
 
   create_table "properties", force: true do |t|
@@ -106,12 +109,12 @@ ActiveRecord::Schema.define(version: 20140805023305) do
   add_index "properties", ["property_location_id"], name: "index_properties_on_property_location_id", using: :btree
 
   create_table "property_locations", force: true do |t|
-    t.string   "area"
     t.integer  "city"
     t.integer  "state"
     t.integer  "country"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "area"
   end
 
   create_table "users", force: true do |t|

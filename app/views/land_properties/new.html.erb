@@ -1,0 +1,48 @@
+<% provide(:title, 'Add New Property') %>
+<% provide(:dashboard, true) %>
+<h1>Add New Property</h1>
+
+	<%= form_for @property, html: { role: "form" } do |f| %>
+		<%= render 'shared/error_messages' %>
+
+		<div class="form-group">
+			<%= f.label :description %>
+			<%= f.text_area :description, class: "form-control", rows: "3" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label	:price %>
+			<%= f.text_field :price, class: "form-control" %>
+		</div>
+
+
+		<div class="form-group">
+			<%= f.label	:lease_type %>
+			<%= select :land_property, :lease_type, LandPropertyConstraint.lease_types.to_a, { }, { :class => 'form-control'} %>	
+		</div>
+
+		<div class="form-group">
+			<%= f.label	:area %>
+			<%= f.text_field :area, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :water_supply %>
+			<%= select :land_property, :water_supply, LandPropertyConstraint.water_supply_types, { }, { :class => 'form-control'} %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label	:available_from %>
+			<%= f.date_select :available_from %>
+		</div>
+
+		<div class="form-group">
+			<%= f.fields_for :photos do |p| %>
+	   		<%= p.label :photo %><br>
+	   		<%= p.file_field :photo, :multiple => true, name: "photos[photo][]" %>
+	 	</div>
+
+	<% end %>
+			
+			<%= f.submit "Add Property", class: "btn btn-primary" %>
+<% end %>

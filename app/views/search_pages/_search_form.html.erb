@@ -1,83 +1,48 @@
 
-<%= form_tag({controller: "search_pages", action: "search"}, method: "get", id: "search-cat")  do %>
+<%= form_tag({controller: "search_pages", action: "search"}, method: "get", id: "search-cat")  do |f| %>
 
 	<div>
-		<%= label_tag :price_range %>
-		<%= select_tag :price_range, 
-						options_for_select([['All', 0],
-											['<5000', 1], 
-											['5000-10000',	2],
-											['10000-15000',	3],
-											['15000-2000',	4],
-											['20000-25000',	5],
-											['25000-30000',	6],
-											['30000+',		7]]),
-						{ class: "form-control"}  %>
-
+		<%= label_tag 'conditions[price_range]', 'Price Range' %>
+		<%= select 'conditions', :price_range,
+						options_for_select(SearchConstraint.PRICE_RANGE.to_a, @condition[:price_range]) %>
 
 	</div>
 
 	<div>
-		<h4>Bedrooms</h4>		
-			<%= label_tag :bedroom_all, nil, class: "checkbox-inline" do %>
-				<%= check_box_tag(:bedroom_all) %>All
-			<% end %>
-		
-		
-			<%= label_tag :bedroom_1R, nil, class: "checkbox-inline" do %>
-				<%= check_box_tag(:bedroom_1R) %>1R
-			<% end %>
-		
-
-		
-			<%= label_tag(:bedroom_1RK, nil, class: "checkbox-inline") do %>
-				<%= check_box_tag(:bedroom_1RK) %>1RK
-			<% end %>
-
-		
-			<%= label_tag(:bedroom_1BHK, nil, class: "checkbox-inline") do %>
-				<%= check_box_tag(:bedroom_1BHK) %>1BHK
-			<% end %>
-			
-			<%= label_tag(:bedroom_2BHK, nil, class: "checkbox-inline") do %>
-				<%= check_box_tag(:bedroom_2BHK) %>2BHK
-			<% end %>
-			
-			<%= label_tag(:bedroom_3BHK, nil, class: "checkbox-inline") do %>
-				<%= check_box_tag(:bedroom_3BHK) %>3BHK
-			<% end %>
-			
-			<%= label_tag(:bedroom_4BHK, nil, class: "checkbox-inline") do %>
-				<%= check_box_tag(:bedroom_4BHK) %>4BHK
-			<% end %>
-			
-			<%= label_tag(:bedroom_5BHK, nil, class: "checkbox-inline") do %>
-				<%= check_box_tag(:bedroom_5BHK) %>5BHK+
-			<% end %>
-		
+		<h3>Bedrooms</h3>
+		<% PropertyConstraint.property_types.each do |key, value| %>
+			<label class="checkbox-inline">
+				<% begin %>
+				<% check = @condition[:bedroom].include?(value.to_s) %>
+				<% rescue %>
+				<% check = false %>
+				<% end %>
+				<%= check_box_tag 'conditions[bedroom][]', value, check %><%= key %>
+			</label>
+		<% end %>
 	</div>
+
 	<div>
-		<h4>Type</h4>
-		<%= label_tag :type_all, nil, class: "checkbox-inline" do %>
-			<%= check_box_tag(:type_all) %>All
+		<h3>Bedrooms</h3>
+		<% PropertyLocationConstraint.area_types.each do |key, value| %>
+			<label class="checkbox-inline">
+				<% begin %>
+				<% check = @condition[:area].include?(value.to_s) %>
+				<% rescue %>
+				<% check = false %>
+				<% end %>
+				<%= check_box_tag 'conditions[area][]', value, check %><%= key %>
+			</label>
+
+
 		<% end %>
-		<%= label_tag :type_rent, nil, class: "checkbox-inline" do %>
-			<%= check_box_tag(:type_rent) %>All
-		<% end %>
-		<%= label_tag :type_lease, nil, class: "checkbox-inline" do %>
-			<%= check_box_tag(:type_lease) %>All
-		<% end %>
-		<%= label_tag :type_sale, nil, class: "checkbox-inline" do %>
-			<%= check_box_tag(:type_sale) %>All
-		<% end %>
-	</div>
-	<div>
-		<h4>Localities</h4>
 		
 	</div>
 
+	
 
 
-	<%= submit_tag("Search")%>
+
+	<%= submit_tag("Search", class: "btn btn-default")%>
 
 <% end %>

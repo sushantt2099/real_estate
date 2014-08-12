@@ -1,5 +1,7 @@
+<% require 'property_location_constraint' %>
 <div class="page-header">
 	<h1><%= PropertyConstraint.get_key_for_value(@property.property_type, PropertyConstraint.property_types) %>
-	<small> near <%= @property.address.street_name%>, <%= @property.address.landmark%>, <%= PropertyLocation.find_by(id: @property.property_location_id).area %></small>
+	<small> near <%= @property.address.street_name%>, <%= @property.address.landmark%>, 
+	<%= PropertyConstraint.get_key_for_value(PropertyLocation.find_by(id: @property.property_location_id).area, PropertyLocationConstraint.area_types) %></small>
 	</h1>
 </div>

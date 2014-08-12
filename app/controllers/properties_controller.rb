@@ -20,9 +20,6 @@ class PropertiesController < ApplicationController
     @photo = @property.photos.build
   end
 
-  def index
-    @properties = Property.all
-  end
 
   def create 
   	@property = Property.new(property_prams)

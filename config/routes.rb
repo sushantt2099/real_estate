@@ -11,7 +11,9 @@ RealEstate::Application.routes.draw do
   resources :properties,          only: [:new, :create, :index, :show]
   resources :sessions,            only: [:new, :create]
   resources :dashboards,          only: [:show]
-  resources :interested_people,    only: [:create, :destroy]
+  resources :interested_people,   only: [:create, :destroy]
+  resources :land_properties,     only: [:new, :create, :show]
+  resources :search_pages,        only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,6 +2,8 @@ require 'property_location_constraint'
 class PropertyLocation < ActiveRecord::Base
 
 	belongs_to :property
+	belongs_to :land_property
+	
 	validates :area, presence: true, length: { maximum: PropertyLocationConstraint.area_length_max }
 
 	validates :city, presence: true, numericality: { only_interger: true, 
@@ -18,4 +20,9 @@ class PropertyLocation < ActiveRecord::Base
 														greater_than_or_equal_to: PropertyLocationConstraint.minimum_value,
 														less_than_or_equal_to: PropertyLocationConstraint.max_value_of_type(
 															PropertyLocationConstraint.country_types)}
+
+	validates :area, presence: true, numericality: { only_interger: true, 
+														greater_than_or_equal_to: PropertyLocationConstraint.minimum_value,
+														less_than_or_equal_to: PropertyLocationConstraint.max_value_of_type(
+																PropertyLocationConstraint.area_types)}
 end

@@ -1,7 +1,12 @@
 include CarrierWave::MiniMagick
+require 'land_property_constraint'
 module PropertiesHelper
 	def current_property
-		Property.find_by(id: cookies[PropertyConstraint.cookie_current_property])
+		if Property.find_by(id: cookies[PropertyConstraint.cookie_current_property])
+			Property.find_by(id: cookies[PropertyConstraint.cookie_current_property])			
+		else 
+			LandProperty.find_by(id: cookies[LandPropertyConstraint.cookie_current_property])
+		end
 	end
 
 	def glyphicon value

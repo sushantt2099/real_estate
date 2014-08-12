@@ -2,13 +2,15 @@ require 'BasicConstraint'
 class PropertyLocationConstraint < BasicConstraint
 
 	cattr_reader	:country_types, :state_types, :city_types, :area_length_max, :SUBMIT_BUTTON, 
-					:LABEL_AREA, :LABEL_CITY, :LABEL_STATE, :LABEL_COUNTRY
+					:LABEL_AREA, :LABEL_CITY, :LABEL_STATE, :LABEL_COUNTRY, :area_types
 
 	@@country_types = create_types [:India]
 
 	@@state_types	= create_types [:Karnataka]
 
 	@@city_types	= create_types [:Bangalore]
+
+	@@area_types 	= create_types [:"AECS Layout", :"Brookfield", :"KundanHalli"]
 
 	@@area_length_max = 20
 
