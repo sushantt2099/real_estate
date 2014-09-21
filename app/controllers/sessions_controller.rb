@@ -5,6 +5,9 @@ require 'constraint/user_constraint'
 class SessionsController < ApplicationController
 	skip_before_filter :verify_authenticity_token, only: [:create]
 	include SessionsHelper
+	include SessionsHelper
+	before_action :signed_in_user
+	
 	def new
 		
 	end

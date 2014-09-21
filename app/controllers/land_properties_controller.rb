@@ -1,6 +1,10 @@
 require 'land_property_constraint'
 require 'PropertyConstraint'
 class LandPropertiesController < ApplicationController
+
+  include SessionsHelper
+  before_action :signed_in_user
+
   def new
   	@property = LandProperty.new
   	@photo = @property.photos.build

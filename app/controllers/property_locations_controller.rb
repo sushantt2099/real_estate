@@ -2,6 +2,10 @@ require 'property_location_constraint'
 require 'PropertyConstraint'
 class PropertyLocationsController < ApplicationController
   include PropertiesHelper
+  include SessionsHelper
+  before_action :signed_in_user
+  
+
   def new
   	@location = PropertyLocation.new
   end

@@ -1,6 +1,10 @@
 require 'boolean_amenity_constraint'
 class BooleanAmenitiesController < ApplicationController
   include PropertiesHelper
+  include SessionsHelper
+  before_action :signed_in_user
+
+
   def new
   	@amenity = BooleanAmenity.new
   end

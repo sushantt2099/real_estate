@@ -2,6 +2,9 @@ require 'address_constraint'
 require 'PropertyConstraint'
 class AddressesController < ApplicationController
   include PropertiesHelper  
+  include SessionsHelper
+  before_action :signed_in_user
+
   def new
   	@address = current_property.build_address
   end

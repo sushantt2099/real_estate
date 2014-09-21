@@ -1,6 +1,10 @@
 require 'integer_amenity_constraint'
 class IntegerAmenitiesController < ApplicationController
   include PropertiesHelper 
+  include SessionsHelper
+  before_action :signed_in_user
+
+  
   def new
   	@amenity = IntegerAmenity.new
   end

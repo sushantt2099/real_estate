@@ -3,6 +3,8 @@ class PropertiesController < ApplicationController
 
 
   helper_method :propertyConstraint
+  include SessionsHelper
+  before_action :signed_in_user
 
   def show
     @property = Property.find(params[:id])

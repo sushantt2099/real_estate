@@ -2,6 +2,8 @@ require 'interested_people_constraint'
 
 class InterestedPeopleController < ApplicationController
  
+  include SessionsHelper
+  before_action :signed_in_user, only: [:destroy]
 
   def create
   	@current_property = Property.find_by(param_current_property_id)
