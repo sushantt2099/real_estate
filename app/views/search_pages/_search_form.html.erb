@@ -23,7 +23,7 @@
 	</div>
 
 	<div>
-		<h3>Bedrooms</h3>
+		<h3>Localities</h3>
 		<% PropertyLocationConstraint.area_types.each do |key, value| %>
 			<label class="checkbox-inline">
 				<% begin %>
@@ -33,10 +33,22 @@
 				<% end %>
 				<%= check_box_tag 'conditions[area][]', value, check %><%= key %>
 			</label>
-
-
 		<% end %>
-		
+	</div>
+
+	<div>
+		<h3>Type</h3>
+		<% PropertyConstraint.lease_types.each do |key, value| %>
+			<label class="checkbox-inline">
+				<% begin %>
+					<% check = @condition[:lease_types].include?(value.to_s) %>
+				<% rescue Exception => e %>
+					<% check = false %>
+				<% end %>
+					<%= check_box_tag 'conditions[lease_types][]', value, check %><%= key %>
+			</label>
+		<% end %>
+
 	</div>
 
 	

@@ -1,4 +1,5 @@
 require 'constraint/search_constraint'
+require 'property_location_constraint'
 
 class SearchPagesController < ApplicationController
 
@@ -14,7 +15,7 @@ class SearchPagesController < ApplicationController
 	private
 		def search_param
 			logger.info params
-			params.permit(conditions: [:price_range, bedroom: [], area: []])
+			params.permit(conditions: [:price_range, bedroom: [], area: [], lease_types: []])
 			
 		end
   
